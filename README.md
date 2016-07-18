@@ -16,3 +16,9 @@ node_modules/react-native-vector-icons/lib/create-icon-set.js
  +    }
  +    (document.head || document.getElementsByTagName('head')[0]).appendChild(styleElement);
 ```
+
+# npm 之后配置icon font
+Copy the MaterialIcons font file from react-native-vector-icons to your local working directory:
+
+./node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf -> ./android/app/src/main/assets/fonts.
+
