@@ -9,7 +9,7 @@ import {
   AppRegistry,
   Platform,
 } from 'react-native';
-import Root from './app';
+import Root from './src';
 
 
 AppRegistry.registerComponent('RNStarter', () => Root);

@@ -74,6 +74,16 @@ module.exports = {
       },
       include: [config.paths.src],
       exclude: [/node_modules/]
+    }, {
+      test: /\.js?$/,
+      loader: 'babel',
+      include: [config.paths.src],
+      query: {
+        presets: ['es2015', 'react', 'stage-1']
+      },
+    }, {
+      test: /\.(eot|otf|svg|ttf|woff|woff2|png|jpg|gif)\w*/,
+      loader: 'file'
     }]
   }
 };
