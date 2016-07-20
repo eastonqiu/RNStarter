@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { helloAction } from '../modules/hello';
 import HelloB from './HelloB';
 
-@connect(state=>({helloState: state.helloReducer}), {helloAction})
+@connect(state=>({helloState: state.hello.param}), {helloAction})
 export default class Hello extends Component {
   static defaultProps = {
       title: 'Hello',

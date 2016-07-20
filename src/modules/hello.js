@@ -2,7 +2,7 @@
 const HELLO = 'hello/HELLO';
 
 const initialState = {
-  hello: false
+  param: false
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -11,7 +11,7 @@ export default function reducer(state = initialState, action = {}) {
     case HELLO:
       return {
         ...state,
-        hello: true
+        param: true
       };
 
     default:
@@ -23,6 +23,6 @@ export function helloAction(val) {
   console.log(val);
   return {
     type: HELLO,
-    param: 'param',
+    text: 'text',
   };
 }
