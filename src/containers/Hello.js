@@ -8,10 +8,12 @@ import {
 
 import NavigationBar from 'react-native-navbar';
 import { connect } from 'react-redux';
+import autobind from 'autobind-decorator'
 import { helloAction } from '../modules/hello';
 import HelloB from './HelloB';
 
 @connect(state=>({helloState: state.hello.param}), {helloAction})
+@autobind
 export default class Hello extends Component {
   static defaultProps = {
       title: 'Hello',
@@ -61,7 +63,7 @@ export default class Hello extends Component {
             </Text>
           </View>
           <TouchableHighlight 
-            onPress={this.sayHello.bind(this)}
+            onPress={this.sayHello}
             underlayColor={'transparent'}>
             <Text>Hello Redux</Text>
           </TouchableHighlight>
