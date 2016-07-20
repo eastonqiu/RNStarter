@@ -52,6 +52,7 @@ export default class App extends Component {
       <TabBar
         onItemSelected={(index) => {}}
         navTextColorSelected="#0066FF"
+        defaultPage={0}
       >
         {this._renderTabBarItem(original.title, original.icon, 0, original.component)}
         {this._renderTabBarItem(community.title, community.icon, 1, community.component)}

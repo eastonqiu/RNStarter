@@ -8,6 +8,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
-import Root from './app';
+import Root from './src';
 
 AppRegistry.registerComponent('RNStarter', () => Root);

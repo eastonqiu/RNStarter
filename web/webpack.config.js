@@ -70,7 +70,8 @@ module.exports = {
       test: /\.jsx?$/,
       loader: 'babel',
       query: {
-        presets: ['es2015', 'react', 'stage-1']
+        presets: ['es2015', 'react', 'stage-1'],
+        plugins: ['transform-decorators-legacy' ]
       },
       include: [config.paths.src],
       exclude: [/node_modules/]
@@ -79,7 +80,8 @@ module.exports = {
       loader: 'babel',
       include: [config.paths.src],
       query: {
-        presets: ['es2015', 'react', 'stage-1']
+        presets: ['es2015', 'react', 'stage-1'],
+        plugins: ['transform-decorators-legacy' ]
       },
     }, {
       test: /\.(eot|otf|svg|ttf|woff|woff2|png|jpg|gif)\w*/,

@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  DrawerLayoutAndroid,
+  TouchableHighlight,
   Platform,
 } from 'react-native';
 
 import NavigationBar from 'react-native-navbar';
+import { connect } from 'react-redux';
+import { helloAction } from '../modules/hello';
 import HelloB from './HelloB';
 
+@connect(state=>({helloState: state.helloReducer}), {helloAction})
 export default class Hello extends Component {
   static defaultProps = {
       title: 'Hello',
       navbarColor: '#F3F3F3',
   };
+
+  sayHello() {
+    console.log(this.props.helloState);
+    this.props.helloAction('hello action');
+  }
 
   render() {
     const {title, navbarColor, navigator} = this.props;
@@ -45,6 +53,18 @@ export default class Hello extends Component {
           title={titleConfig}
           rightButton={rightButtonConfig}
           tintColor={navbarColor} />
+          <View>
+            <Text>
+              {Platform.OS == 'web' &&
+                <a href="http://www.baidu.com">百度链接</a>
+              }
+            </Text>
+          </View>
+          <TouchableHighlight 
+            onPress={this.sayHello.bind(this)}
+            underlayColor={'transparent'}>
+            <Text>Hello Redux</Text>
+          </TouchableHighlight>
       </View>
     );
   }

@@ -1,5 +1,5 @@
 import { createStore as _createStore, compose, applyMiddleware } from 'redux';
-import rootReducer from '../reducers';
+import rootReducer from '../reducer';
 import thunkMiddleware from 'redux-thunk';
 
 const finalCreateStore = compose(
