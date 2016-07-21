@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import createStore from './store/createStore';
+import createStore from './redux/createStore';
 import App from './containers';
 import codePush from "react-native-code-push";
 

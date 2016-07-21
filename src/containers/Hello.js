@@ -8,17 +8,28 @@ import {
 
 import NavigationBar from 'react-native-navbar';
 import { connect } from 'react-redux';
-import autobind from 'autobind-decorator'
+import autobind from 'autobind-decorator';
 import { helloAction } from '../modules/hello';
+import {isLoaded, load as loadPosts} from '../modules/posts';
 import HelloB from './HelloB';
 
-@connect(state=>({helloState: state.hello.param}), {helloAction})
+@connect(state=>({
+  helloState: state.hello.param,
+  posts: state.posts.data,
+  loading: state.posts.loading
+}), {helloAction, loadPosts})
 @autobind
 export default class Hello extends Component {
   static defaultProps = {
       title: 'Hello',
       navbarColor: '#F3F3F3',
   };
+
+  componentWillMount () {
+    if (! this.props.loading) {
+      this.props.loadPosts();
+    }
+  }
 
   sayHello() {
     console.log(this.props.helloState);
@@ -48,6 +59,7 @@ export default class Hello extends Component {
     const titleConfig = {
       title: title,
     };
+    console.log(this.props.posts);
 
     return (
       <View style={{ flex: 1, }}>
