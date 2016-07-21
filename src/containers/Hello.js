@@ -67,6 +67,10 @@ export default class Hello extends Component {
             underlayColor={'transparent'}>
             <Text>Hello Redux</Text>
           </TouchableHighlight>
+          <TouchableHighlight 
+            underlayColor={'transparent'}>
+            <Text>Update</Text>
+          </TouchableHighlight>
       </View>
     );
   }

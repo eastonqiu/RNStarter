@@ -42,3 +42,9 @@ android/keystores/debug.keystore
 
 # web
 web/output
+
+# bundles
+bundles
+
+# release key
+android/app/my-release-key.keystore

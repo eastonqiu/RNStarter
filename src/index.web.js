@@ -5,18 +5,14 @@
  */
 
 import React, { Component } from 'react';
+import { Platform } from 'react-native';
 import { Provider } from 'react-redux';
 import createStore from './store/createStore';
 import App from './containers';
-import codePush from "react-native-code-push";
 
 const store = createStore();
 
 export default class Root extends Component {
-
-  componentDidMount() {
-    codePush.sync();
-  }
 
   render() {
     return (
