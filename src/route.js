@@ -9,7 +9,7 @@ export const original = {
 export const community = {
   title: '搜索',
   icon: 'hearing',
-  component: require('./containers/Hello').default
+  component: require('./containers/MatetialDemo').default
 }
 
 export const dribbble = {
