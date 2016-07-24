@@ -9,8 +9,8 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { original, community, dribbble, cnodejs } from '../route';
-
 import TabBar from '../components/TabBar';
+import ActivityIndicatorWrapper from '../components/ActivityIndicatorWrapper';
 
 export default class App extends Component {
 
@@ -39,7 +39,7 @@ export default class App extends Component {
             renderScene={(route, navigator) => {
               if (route.component) {
                 return (
-                  <route.component {...route} navigator={navigator} />
+                  <ActivityIndicatorWrapper component={route.component} navigator={navigator} {...route} />
                 )
               }
             }} />
