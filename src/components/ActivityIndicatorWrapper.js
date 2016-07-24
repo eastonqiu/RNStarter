@@ -30,7 +30,7 @@ export default class Indicator extends Component {
          return (
             <ActivityIndicatorIOS
               animating={true}
-              style={styles.centering}
+              style={[styles.centering, {width: '100%'}]}
               size="large"
             />
           );
@@ -52,7 +52,6 @@ export default class Indicator extends Component {
 const styles = StyleSheet.create({
   centering: {
     flex: 1,
-    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,
