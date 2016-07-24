@@ -52,6 +52,7 @@ export default class Indicator extends Component {
 const styles = StyleSheet.create({
   centering: {
     flex: 1,
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,
