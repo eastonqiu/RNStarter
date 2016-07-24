@@ -29,9 +29,19 @@ export default class MatetialDemo extends Component {
           title={titleConfig}
           tintColor={navbarColor} />
         
-        
+        <Avatars />
 
+        <Buttons />
+        
+        <Checkboxes />
+
+        <Dividers />
+        
         <IconToggles />
+
+        <RadioButtons />
+        
+        <Subheaders />
 
       </ScrollView>
     );

@@ -7,9 +7,9 @@ export const original = {
 }
 
 export const community = {
-  title: '搜索',
+  title: 'Material',
   icon: 'hearing',
-  component: require('./containers/MatetialDemo').default
+  component: require('./containers/MaterialDemo').default
 }
 
 export const dribbble = {
