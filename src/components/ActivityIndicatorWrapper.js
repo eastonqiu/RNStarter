@@ -3,37 +3,10 @@
 import React, { Component } from 'react';
 import {
   ActivityIndicator,
+  ActivityIndicatorIOS,
   StyleSheet,
-  View,
+  Platform,
 } from 'react-native';
-
-const TimerMixin = require('react-timer-mixin');
-
-const ToggleAnimatingActivityIndicator = React.createClass({
-  mixins: [TimerMixin],
-
-  setToggleTimeout() {
-    this.setTimeout(() => {
-      this.setToggleTimeout();
-      this.props.onLoaded();
-    }, 1);
-  },
-
-  componentDidMount() {
-    this.setToggleTimeout();
-  },
-
-  render() {
-    return (
-      <ActivityIndicator
-        animating={true}
-        style={styles.centering}
-        size="large"
-      />
-    );
-  }
-});
-
 
 export default class Indicator extends Component {
   constructor(props) {
@@ -43,14 +16,33 @@ export default class Indicator extends Component {
     };
   }
 
+  componentDidMount() {
+    setTimeout(this.loaded.bind(this), 1);
+  }
+
   loaded() {
     this.setState({loading: false});
   }
 
   render() {
-    if(this.state.loading)
-      return <ToggleAnimatingActivityIndicator onLoaded={this.loaded.bind(this)} />;
-    else if(this.props.component)
+    if(this.state.loading) {
+      if(Platform.OS == 'web')
+         return (
+            <ActivityIndicatorIOS
+              animating={true}
+              style={styles.centering}
+              size="large"
+            />
+          );
+      else
+         return (
+            <ActivityIndicator
+              animating={true}
+              style={styles.centering}
+              size="large"
+            />
+          );
+    } else if(this.props.component)
       return <this.props.component {...this.props} />;
     else
       return null;
@@ -65,3 +57,4 @@ const styles = StyleSheet.create({
     padding: 8,
   },
 });
+
