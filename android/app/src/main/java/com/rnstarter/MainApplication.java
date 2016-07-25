@@ -14,6 +14,7 @@ import java.util.List;
 
 // 1. Import the plugin class
 import com.microsoft.codepush.react.CodePush;
+import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -38,7 +39,8 @@ public class MainApplication extends Application implements ReactApplication {
         // have it, you can run "code-push deployment ls <appName> -k" to retrieve your key.
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-            new CodePush("WgOyagsoywM1A1hQPPt0LUsDtYn8Vy_q8m_wZ", MainApplication.this, BuildConfig.DEBUG)
+            new CodePush("WgOyagsoywM1A1hQPPt0LUsDtYn8Vy_q8m_wZ", MainApplication.this, BuildConfig.DEBUG),
+            new SplashScreenPackage()
         );
     }
   };
