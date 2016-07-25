@@ -6,9 +6,16 @@ import {
   ActivityIndicatorIOS,
   StyleSheet,
   Platform,
+  View,
 } from 'react-native';
+import NavigationBar from 'react-native-navbar';
 
 export default class Indicator extends Component {
+  static defaultProps = {
+      title: 'Hello',
+      navbarColor: '#F3F3F3',
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,22 +33,37 @@ export default class Indicator extends Component {
 
   render() {
     if(this.state.loading) {
-      if(Platform.OS == 'web')
-         return (
+      const {title, navbarColor, navigator} = this.props;
+      let leftButtonConfig = <View />; 
+      if(navigator.getCurrentRoutes().length > 1) {
+        leftButtonConfig = {
+          title: 'Back',
+          handler() {
+            navigator.pop();
+          }
+        };
+      }
+     return (
+        <View style={{flex: 1}}>
+            <NavigationBar
+              title={{title: title}}
+              leftButton={leftButtonConfig}
+              tintColor={navbarColor} />
+            {Platform.OS == 'web'?
             <ActivityIndicatorIOS
               animating={true}
               style={[styles.centering, {width: '100%'}]}
               size="large"
             />
-          );
-      else
-         return (
+            :
             <ActivityIndicator
               animating={true}
               style={styles.centering}
               size="large"
             />
-          );
+            }
+        </View>
+      );
     } else if(this.props.component)
       return <this.props.component {...this.props} />;
     else
