@@ -24,7 +24,11 @@ export default class Indicator extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.loaded.bind(this), 1);
+    this.timer = setTimeout(this.loaded.bind(this), 1);
+  }
+
+  componentWillUnmount() {
+    this.timer && clearTimeout(this.timer);
   }
 
   loaded() {
