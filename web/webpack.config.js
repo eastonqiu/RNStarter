@@ -31,10 +31,12 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
   },
   entry: isProd? [
+    'babel-polyfill',
     config.paths.index
   ]: [
     'webpack-dev-server/client?http://' + IP + ':' + PORT,
     'webpack/hot/only-dev-server',
+    'babel-polyfill',
     config.paths.index,
   ],
   output: {
