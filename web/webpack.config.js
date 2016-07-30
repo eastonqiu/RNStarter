@@ -69,22 +69,14 @@ module.exports = {
       include: [config.paths.src],
       exclude: [/node_modules/]
     }, {
-      test: /\.jsx?$/,
+      test: /\.(jsx|js)?$/,
       loader: 'babel',
       query: {
         presets: ['es2015', 'react', 'stage-1'],
-        plugins: ['transform-decorators-legacy' ]
+        plugins: ['transform-decorators-legacy']
       },
       include: [config.paths.src],
-      exclude: [/node_modules/]
-    }, {
-      test: /\.js?$/,
-      loader: 'babel',
-      include: [config.paths.src],
-      query: {
-        presets: ['es2015', 'react', 'stage-1'],
-        plugins: ['transform-decorators-legacy' ]
-      },
+      exclude: [/node_modules\/(?!(react-native-navbar|react-native-vector-icons|react-native-scrollable-tab-view|react-native-material-design)\/).*/,]
     }, {
       test: /\.(eot|otf|svg|ttf|woff|woff2|png|jpg|gif)\w*/,
       loader: 'file'
