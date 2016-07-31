@@ -47,7 +47,7 @@ export default class App extends Component {
       initialPage={0}
       renderTabBar={() => <TabBar />}
       tabBarPosition='bottom'
-      locked={true}
+      locked={false}
       scrollWithoutAnimation={true}
       >
       {this._renderTabBarItem(original.title, original.icon, 0, original.component)}
