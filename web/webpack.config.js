@@ -60,7 +60,7 @@ module.exports = {
     }): new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlPlugin(),
-    isProd? new WebpackShellPlugin({onBuildExit:['ln -s ../../node_modules/react-native-vector-icons/Fonts ' + config.paths.src + '/web/output/']}) : '',
+    isProd? new WebpackShellPlugin({onBuildExit:['ln -s -f ../../node_modules/react-native-vector-icons/Fonts ' + config.paths.src + '/web/output/']}) : function(){},
   ],
   module: {
     loaders: [{
