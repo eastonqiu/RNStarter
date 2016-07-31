@@ -27,7 +27,9 @@ export default function createIconSet(glyphMap, fontFamily, fontFile) {
   if (Platform.OS === 'android' && fontFile) {
     fontReference = fontFile.replace(/\.(otf|ttf)$/, '');
   } else if (Platform.OS === 'web') {
-    var css = '@font-face {\nfont-family: \'' + fontFamily + '\';\nsrc: url(./node_modules/react-native-vector-icons/Fonts/' + fontFile + ') format(\'truetype\');\n}';
+    var iconSrc = ICONS_FONT_PATH ? ICONS_FONT_PATH : './node_modules/react-native-vector-icons/Fonts/';
+console.log(iconSrc);
+    var css = '@font-face {\nfont-family: \'' + fontFamily + '\';\nsrc: url(' + iconSrc + fontFile + ') format(\'truetype\');\n}';
     var styleElement = document.createElement('style');
     styleElement.type = 'text/css';
     if (styleElement.styleSheet){

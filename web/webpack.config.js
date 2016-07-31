@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlPlugin = require('webpack-html-plugin');
 var HasteResolverPlugin = require('haste-resolver-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 var IP = '0.0.0.0';
 var PORT = 3000;
@@ -51,13 +52,15 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(isProd? PROD: DEV),
-      }
+      },
+      ICONS_FONT_PATH: (isProd? JSON.stringify("./Fonts/") : null),
     }),
     isProd? new webpack.ProvidePlugin({
       React: "react"
     }): new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlPlugin(),
+    isProd? new WebpackShellPlugin({onBuildExit:['ln -s ../../node_modules/react-native-vector-icons/Fonts ' + config.paths.src + '/web/output/']}) : '',
   ],
   module: {
     loaders: [{

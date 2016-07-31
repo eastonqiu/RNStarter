@@ -4,4 +4,4 @@ cp ./modified/IconToggle.js node_modules/react-native-material-design/lib/IconTo
 cp ./modified/Avatar.js node_modules/react-native-material-design/lib/Avatar.js
 cp ./modified/SplashScreen.java node_modules/rn-splash-screen/android/src/main/java/com/mehcode/reactnative/splashscreen/SplashScreen.java
 cp node_modules/react-native-scrollable-tab-view/Button.ios.js node_modules/react-native-scrollable-tab-view/Button.js
-cp ./modified/ViewPager.web.js node_modules/react-web/lib/ViewPager/ViewPager.web.js
+cp ./modified/ViewPager.web.js_mod node_modules/react-web/lib/ViewPager/ViewPager.web.js
