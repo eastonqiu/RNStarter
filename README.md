@@ -93,6 +93,7 @@ Use [rn-splash-screen](https://github.com/mehcode/rn-splash-screen)
 - Show a redux flow sample in doc
 - Add react-router for web
 - Add Server Rendering for web
+- Rename app name
 
 # Issues
 Issues are welcome, just commit PR.
