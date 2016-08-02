@@ -4,9 +4,19 @@ A cross platform starter for react-native + web + redux + codepush.
 Support for IOS, Android and Web.
 
 # Getting Start
-***Clone this repository to local and enter the root dir.***
-
 All the commands should run on the root directory of project.
+
+- Clone repository and rename app if you want.
+   - Clone this repository to local and enter the root dir.
+```
+git clone https://github.com/eastonqiu/RNStarter.git MyApp
+```
+   - Rename App Name to Your App
+```
+cd MyApp
+./rename.sh MyApp
+```
+
 - Env
 Nodejs version > 5 and < 6. (5.7.0 recomended)
 Use [nvm](https://github.com/creationix/nvm) to manage nodejs versions.
