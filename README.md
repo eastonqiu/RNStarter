@@ -4,6 +4,7 @@ A cross platform starter for react-native + web + redux + codepush.
 Support for IOS, Android and Web.
 
 # Getting Start
+***Clone this repository to local and enter the root dir.***
 
 All the commands should run on the root directory of project.
 - Env
@@ -21,6 +22,10 @@ resource setting and hack some modules to support web, you can refer to `support
 ```
 - Icon Font
 Icon fonts setting for android automaticallyI(support_for_web.sh), ios coming soon. (you need set it manually for IOS, refer to [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#ios))
+- copy config, config file is gitignore and specified in local env.
+```
+cp src/config.js.example src/config.js
+```
 
 # Dev Running
 
@@ -92,7 +97,7 @@ Use [rn-splash-screen](https://github.com/mehcode/rn-splash-screen)
 - Support above `coming soon...`
 - Show a redux flow sample in doc
 - Add react-router for web
-- Add Server Rendering for web
+- Add Server Side Rendering(SSR) for web
 - Rename app name
 
 # Issues
