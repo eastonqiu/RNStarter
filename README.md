@@ -7,11 +7,10 @@ Support for IOS, Android and Web.
 All the commands should run on the root directory of project.
 
 - Clone repository and rename app if you want.
-   - Clone this repository to local and enter the root dir.
 ```
 git clone https://github.com/eastonqiu/RNStarter.git MyApp
 ```
-   - Rename App Name to Your App
+Rename App Name to Your App
 ```
 cd MyApp
 ./rename.sh MyApp
