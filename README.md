@@ -107,7 +107,7 @@ Use [rn-splash-screen](https://github.com/mehcode/rn-splash-screen)
 - Show a redux flow sample in doc
 - Add react-router for web
 - Add Server Side Rendering(SSR) for web
-- ~~ Rename app name ~~
+- ~~Rename app name~~
 - Support ESLint
 - Support travis
 - Support editorconfig
